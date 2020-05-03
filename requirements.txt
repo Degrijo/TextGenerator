@@ -1,8 +1,15 @@
+click==7.1.2
+Flask==1.1.2
+gunicorn==20.0.4
 h5py==2.10.0
+itsdangerous==1.1.0
+Jinja2==2.11.2
 Keras==2.3.1
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
+MarkupSafe==1.1.1
 numpy==1.18.3
 PyYAML==5.3.1
 scipy==1.4.1
 six==1.14.0
+Werkzeug==1.0.1
