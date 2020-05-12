@@ -1,13 +1,7 @@
 from __future__ import print_function
-from keras.callbacks import LambdaCallback
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.optimizers import RMSprop
 from tensorflow.keras.models import load_model
 import numpy as np
 import random
-import sys
 import json
 
 
@@ -55,11 +49,4 @@ def get_text():
         next_char = indices_char[next_index]
         sentence = sentence[1:] + next_char
         generated += next_char
-    # output = generated.split('?')[1:-1]
-    # for sentence in output:
-    #     for i in range(len(sentence)):
-    #         if sentence[i].isalpha():
-    #             sentence = sentence[i].upper() + sentence[i:] + '?'
-    #             break
-    # print(output)
     return generated
