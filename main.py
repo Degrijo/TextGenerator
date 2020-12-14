@@ -1,6 +1,6 @@
 from flask import Flask
 
-from text_generation import get_text
+from generation import get_text
 
 
 app = Flask(__name__)
