@@ -12,13 +12,13 @@ import numpy as np
 
 
 START_CHAR, END_CHAR = 'start char', 'end char'
-MAXLEN = 3
+MAXLEN = 4
 STEP = 1
 BATCH_SIZE = 128
 MAXQUESTION = 20
-DATASET_PATH = 'datasets/dataset_1.txt'
-EPOCH_NUMBER = 100
-LEARNING_RATE = 0.01
+DATASET_PATH = 'datasets/dataset_2.txt'
+EPOCH_NUMBER = 150
+LEARNING_RATE = 0.001
 INPUT_REPLACE_CHARS = (('„“«»', '"'), ('…', '...'), ('’', r"'"),
                        (r'(\S)([,.!?;:"\'-])', r'\1 \2'), (r'(["\'.-])(\S)', r'\1 \2'))
 OUTPUT_REPLACE_CHARS = ((r'(\S) ([,.!?;:])', r'\1\2'),)
@@ -121,7 +121,7 @@ def on_epoch_end(epoch, _):
             sentence.append(next_char)
         str_sentence = aggregate_text(' '.join(sentence[1:]), OUTPUT_REPLACE_CHARS)
         logging.info('generated sentence: "' + str_sentence + '"')
-        logs.append(str_sentence)
+        logs.append(str_sentence)  # drop start/end chars
 
 
 print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
